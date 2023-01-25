@@ -6,7 +6,7 @@ import Home from "./Home";
 import ListPosts from "./ListPosts";
 import About from "./screens/About";
 
-axios.defaults.baseURL = "http://http://18.204.7.140/";
+axios.defaults.baseURL = "http://localhost:4000";
 function App() {
   return (
     <header className="App-header">

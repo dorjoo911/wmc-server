@@ -26,7 +26,6 @@ export default function AddPost() {
     const formattedDate = date.getTime();
     try {
       if (title !== "" && description !== "" && deadline !== "") {
-        console.log(infoToken);
         await axios.post(`/posts`, {
           title: title,
           description: description,

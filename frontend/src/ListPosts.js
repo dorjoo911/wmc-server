@@ -68,8 +68,9 @@ export default function ListPosts() {
         </MDBContainer>
       </MDBNavbar>
       <MDBBtn style={{ marginTop: "5px", textAlign: "left" }} onClick={addpost}>
-        Shalom <span style={{ color: "yellow" }}>{infoToken.fullname}</span>, if
-        you have a request then just click here
+        Greething{" "}
+        <span style={{ color: "yellow" }}>{infoToken.fullname} !</span> if you
+        have a request then just click here
       </MDBBtn>
       <Post posts={posts} id={id} />
     </div>

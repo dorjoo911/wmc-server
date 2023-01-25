@@ -17,7 +17,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
-// https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyADyvpZiHw31qSbNxOKNv_cLezyOxLlmvA
+
 function Loginout({ user }) {
   const [justifyActive, setJustifyActive] = useState("tab1");
   const [fullname, setFullname] = useState("");
@@ -117,8 +117,6 @@ function Loginout({ user }) {
         email: email,
         password: password,
       });
-      // console.log(res.data);
-      // console.log(res.data.idToken);
 
       const token = res.data.data.accessToken;
       const detoken = jwt_decode(token);
