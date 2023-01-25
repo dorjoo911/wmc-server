@@ -6,10 +6,27 @@ const Response = require("./responseObj");
 const authRouter = require("./authRouter");
 const userRouter = require("./user/userRouter");
 const postRouter = require("./post/postRouter");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+const _dirname = path.dirname("");
+const buildPath = path.join(_dirname, "../frontend/build");
+
+app.use(express.static(buildPath));
+
+app.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "../frontend/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
 
 app.use("/users", userRouter);
 app.use("/login", authRouter);
